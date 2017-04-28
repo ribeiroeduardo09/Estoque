@@ -12,6 +12,15 @@ public class Produto {
 	private int quantidade;
 	private LocalDate datacad;
 	
+	public Produto(String nome, Float valorcompra, Float valorvenda, int codigoproduto, String descricao, int quantidade, LocalDate datacad){
+		this.nome = nome;
+		this.valorcompra = valorcompra;
+		this.valorvenda = valorvenda;
+		this.codigoproduto = codigoproduto;
+		this.descricao = descricao;
+		this.quantidade = quantidade;
+		this.datacad = datacad;
+	}
 	
 	public String getNome() {
 		return nome;
