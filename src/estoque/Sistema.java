@@ -15,6 +15,11 @@ public class Sistema {
 	public void addProduto(Produto prod){
 		produtos.add(prod);
 	}
+	public void delProduto(int codigoproduto){
+		for(Produto prod:produtos){
+			if(prod.getCodigoproduto()==codigoproduto) produtos.remove(prod);
+		}
+	}
 	public void addUsuario(Usuario usuario){
 		usuarios.add(usuario);
 	}
@@ -33,7 +38,7 @@ public class Sistema {
 	public Produto searchProduto(int codigoproduto){
 		for(Produto prod:produtos){
 			if(prod.getCodigoproduto() == codigoproduto) return prod;
-		}
+		} 
 		return null;
 	}
 
