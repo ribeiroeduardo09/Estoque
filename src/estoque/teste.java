@@ -1,15 +1,15 @@
 package estoque;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class Teste {
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		
-		Sistema sis = new Sistema();
+		Produto p1 = new Produto("Teclado", 17.50f, 20.50f, 111111, "Teclado comum", 3, LocalDate.of(2017, Month.FEBRUARY, 10));
 		
-		Produto c1 = new Produto("111111", new Produto("Teclado"));
-		Produto c2 = new Produto("222222", new Produto("Mouse"));
 		
-		sis.addProduto(prod);
 		
 	}
 
