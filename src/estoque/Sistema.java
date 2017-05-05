@@ -12,6 +12,7 @@ public class Sistema {
 	private List<Venda> vendas = new LinkedList<Venda>();
 	private List<Compra> compras = new LinkedList<Compra>();
 	
+	
 	public void addProduto(Produto prod){
 		produtos.add(prod);
 	}
@@ -40,6 +41,43 @@ public class Sistema {
 			if(prod.getCodigoproduto() == codigoproduto) return prod;
 		} 
 		return null;
+	}
+	//Getters & Setters
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	public List<Fornecedor> getFornecedores() {
+		return fornecedores;
+	}
+	public void setFornecedores(List<Fornecedor> fornecedores) {
+		this.fornecedores = fornecedores;
+	}
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+	public List<Venda> getVendas() {
+		return vendas;
+	}
+	public void setVendas(List<Venda> vendas) {
+		this.vendas = vendas;
+	}
+	public List<Compra> getCompras() {
+		return compras;
+	}
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
 	}
 
 }
