@@ -24,6 +24,7 @@ public class Sistema {
 	public void addUsuario(Usuario usuario){
 		usuarios.add(usuario);
 	}
+	public void delUsuario(int )
 	public void addCliente(Cliente cliente){
 		clientes.add(cliente);
 	}
