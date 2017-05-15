@@ -9,9 +9,9 @@ public class Venda {
 	private String formapagto;
 	private LocalDate datavenda;
 	private String codigo;
-	private List produtos = new LinkedList<Produto>();
+	private List<Produto> produtos = new LinkedList<Produto>();
 	
-	public Venda(Float valortotal, String formapagto, LocalDate datavenda, String codigo, List produtos){
+	public Venda(Float valortotal, String formapagto, LocalDate datavenda, String codigo, List<Produto> produtos){
 		this.valortotal = valortotal;
 		this.formapagto = formapagto;
 		this.datavenda = datavenda;
@@ -19,6 +19,7 @@ public class Venda {
 		this.produtos = produtos;
 	}
 
+	//Valor Total
 	public Float getValortotal() {
 		return valortotal;
 	}
@@ -27,6 +28,7 @@ public class Venda {
 		this.valortotal = valortotal;
 	}
 
+	//Forma de Pagamento
 	public String getFormapagto() {
 		return formapagto;
 	}
@@ -35,6 +37,7 @@ public class Venda {
 		this.formapagto = formapagto;
 	}
 
+	//Data de Venda
 	public LocalDate getDatavenda() {
 		return datavenda;
 	}
@@ -43,6 +46,7 @@ public class Venda {
 		this.datavenda = datavenda;
 	}
 
+	//Códigos
 	public String getCodigo() {
 		return codigo;
 	}
@@ -51,13 +55,22 @@ public class Venda {
 		this.codigo = codigo;
 	}
 
-	public List getProdutos() {
+	//Produtos
+	public List<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public void setProdutos(List produtos) {
+	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
 	
+	public void addProduto(Produto prod){
+		produtos.add(prod);
+	}
 	
+	public void delProduto(int codigoproduto){
+		for(Produto prod:produtos){
+			if(prod.getCodigoproduto()==codigoproduto) produtos.remove(prod);
+		}
+	}
 }

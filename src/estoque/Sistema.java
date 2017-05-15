@@ -12,7 +12,7 @@ public class Sistema {
 	private List<Venda> vendas = new LinkedList<Venda>();
 	private List<Compra> compras = new LinkedList<Compra>();
 	
-	
+	/*---------Produtos----------*/
 	public void addProduto(Produto prod){
 		produtos.add(prod);
 	}
@@ -21,28 +21,54 @@ public class Sistema {
 			if(prod.getCodigoproduto()==codigoproduto) produtos.remove(prod);
 		}
 	}
-	public void addUsuario(Usuario usuario){
-		usuarios.add(usuario);
-	}
-	public void delUsuario(int )
-	public void addCliente(Cliente cliente){
-		clientes.add(cliente);
-	}
-	public void addFornecedor(Fornecedor fornecedor){
-		fornecedores.add(fornecedor);
-	}
-	public void addCompra(Compra compra){
-		compras.add(compra);
-	}
-	public void addVenda(Venda venda){
-		vendas.add(venda);
-	}
 	public Produto searchProduto(int codigoproduto){
 		for(Produto prod:produtos){
 			if(prod.getCodigoproduto() == codigoproduto) return prod;
 		} 
 		return null;
+	}/*---------Usuários----------*/
+	public void addUsuario(Usuario usuario){
+		usuarios.add(usuario);
 	}
+	public void delUsuario(String login){
+		for(Usuario usr:usuarios){
+			if(usr.getLogin()==login) usuarios.remove(usr);
+		}
+	}
+	public Usuario searchUsuario(String login){
+		for(Usuario usr:usuarios){
+			if(usr.getLogin()==login) return usr;
+		}
+		return null;
+	}
+	/*---------Clientes----------*/
+	public void addCliente(Cliente cliente){
+		clientes.add(cliente);
+	}
+	public void delCliente(int codigocliente){
+		for(Cliente cli:clientes){
+			if(cli.getCodigocliente()==codigocliente) clientes.remove(cli);
+		}
+	}
+	public void searchCliente(int codigocliente){
+		for(Cliente cli:clientes){
+			if(cli.getCodigocliente()==codigocliente) clientes.remove(cli);
+		}
+	}
+	/*---------Fornecedores----------*/
+	public void addFornecedor(Fornecedor fornecedor){
+		fornecedores.add(fornecedor);
+	}
+	public void delFornecedor() //Aguardando a classe 'Fornecedor'
+	/*---------Compras----------*/
+	public void addCompra(Compra compra){
+		compras.add(compra);
+	}
+	/*---------Venda----------*/
+	public void addVenda(Venda venda){
+		vendas.add(venda);
+	}
+	
 	//Getters & Setters
 	public List<Produto> getProdutos() {
 		return produtos;
