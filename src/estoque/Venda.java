@@ -8,10 +8,10 @@ public class Venda {
 	private Float valortotal;
 	private String formapagto;
 	private LocalDate datavenda;
-	private String codigo;
+	private int codigo;
 	private List<Produto> produtos = new LinkedList<Produto>();
 	
-	public Venda(Float valortotal, String formapagto, LocalDate datavenda, String codigo, List<Produto> produtos){
+	public Venda(Float valortotal, String formapagto, LocalDate datavenda, int codigo, List<Produto> produtos){
 		this.valortotal = valortotal;
 		this.formapagto = formapagto;
 		this.datavenda = datavenda;
@@ -47,11 +47,11 @@ public class Venda {
 	}
 
 	//Códigos
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 

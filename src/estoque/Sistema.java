@@ -50,23 +50,56 @@ public class Sistema {
 			if(cli.getCodigocliente()==codigocliente) clientes.remove(cli);
 		}
 	}
-	public void searchCliente(int codigocliente){
+	public Cliente searchCliente(int codigocliente){
 		for(Cliente cli:clientes){
-			if(cli.getCodigocliente()==codigocliente) clientes.remove(cli);
+			if(cli.getCodigocliente()==codigocliente) return cli;
 		}
+		return null;
 	}
 	/*---------Fornecedores----------*/
 	public void addFornecedor(Fornecedor fornecedor){
 		fornecedores.add(fornecedor);
 	}
-	public void delFornecedor() //Aguardando a classe 'Fornecedor'
+	public void delFornecedor(int cnpj){
+		for(Fornecedor fncdr:fornecedores){
+			if(fncdr.getCnpj()==cnpj) fornecedores.remove(fncdr);
+		}
+	}
+	public Fornecedor searchFornecedor(int cnpj){
+		for(Fornecedor fncdr:fornecedores){
+			if(fncdr.getCnpj()==cnpj) return fncdr;
+		}
+		return null;
+	}
 	/*---------Compras----------*/
 	public void addCompra(Compra compra){
 		compras.add(compra);
 	}
+	public void delCompra(int codigocompra){
+		for(Compra comp:compras){
+			if(comp.getCodigocompra()==codigocompra) compras.remove(comp);
+		}
+	}
+	public Compra searchCompra(int codigocompra){
+		for(Compra comp:compras){
+			if(comp.getCodigocompra()==codigocompra) return comp;
+		}
+		return null;
+	}
 	/*---------Venda----------*/
 	public void addVenda(Venda venda){
 		vendas.add(venda);
+	}
+	public void delVenda(int codigo){
+		for(Venda ven:vendas){
+			if(ven.getCodigo()==codigo) vendas.remove(ven);
+		}
+	}
+	public Venda searchVenda(int codigo){
+		for(Venda ven:vendas){
+			if(ven.getCodigo()==codigo) return ven;
+		}
+		return null;
 	}
 	
 	//Getters & Setters
