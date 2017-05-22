@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Fornecedor {
 	private String nomeFornecedor;
-	private int cnpj;
+	private long cnpj;
 	private String email;
 	private String telefone;
 	private String endereco;
@@ -14,7 +14,7 @@ public class Fornecedor {
 	private List<Produto> produtos = new LinkedList<Produto>();
 	
 	public Fornecedor(String nomeFornecedor, int cnpj, String email, String telefone, String endereco, 
-					  LocalDate datacadastroforn, List<Produto> produtos)
+					  LocalDate datacadastroforn)
 	{
 		this.nomeFornecedor = nomeFornecedor;
 		this.cnpj = cnpj;
@@ -22,7 +22,6 @@ public class Fornecedor {
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.datacadastroforn = datacadastroforn;
-		this.produtos = produtos;
 	}
 	
 	public String getNome()
@@ -34,11 +33,11 @@ public class Fornecedor {
 		this.nomeFornecedor = nomeFornecedor;
 	}
 	
-	public int getCnpj()
+	public long getCnpj()
 	{
 		return cnpj;
 	}
-	public void setCnpj(int cnpj)
+	public void setCnpj(long cnpj)
 	{
 		this.cnpj = cnpj;
 	}

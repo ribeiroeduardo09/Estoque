@@ -24,7 +24,15 @@ public class Teste2 {
 		
 		Produto produtoBuscado = sist.searchProduto(111111);
 		
-		assertEquals(sist.getProdutos().get(0).getNome(), "Teclado");
+		assertEquals(produtoBuscado.getNome(), "Teclado");
+		
+		/*-----------Fornecedor---------------*/
+		Fornecedor f1 = new Fornecedor("Empresas Dunkan", 67214778000174, "contato@dunkan.com", "11 3031-1417", "Av. Brasil, 4570, São Paulo - SP", LocalDate.of(2017, Month.MAY, 22));
+		
+		sist.addFornecedor(f1);
+		
+		
+		
 	}
 
 }
