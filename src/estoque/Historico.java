@@ -95,15 +95,42 @@ public class Historico {
 		clientes.add(cliente);
 	}
 	
-	public void delProduto (Produto produto){
-	
 		
-		//fazer delete
+	public void delProduto(int codigoproduto){
+		for(Produto prod:produtos){
+			if(prod.getCodigoproduto()==codigoproduto) produtos.remove(prod);
+		}
 	}
 	
+	public void delUsuario(int matricula){
+		for(Usuario usuario:usuarios){
+			if(usuario.getMatricula()==matricula) usuarios.remove(matricula);
+		}
+	}
 	
+	public void delVenda(int codigo){
+		for(Venda venda:vendas){
+			if(venda.getCodigo()==codigo) vendas.remove(codigo);
+		}
+	}
 	
+	public void delCompra(int codigoCompra){
+		for(Compra compra:compras){
+			if(compra.getCodigocompra()==codigoCompra) compras.remove(codigoCompra);
+		}
+	}
 	
+	public void delFornecedor(int cnpj){
+		for(Fornecedor forn:fornecedores){
+			if(forn.getCnpj()== cnpj) fornecedores.remove(cnpj);
+		}
+	}
+	
+	public void delCliente(String cpf){
+		for(Cliente cliente:clientes){
+			if(cliente.getCpf()== cpf) clientes.remove(cpf);
+			}
+		}
 	
 	
 	
