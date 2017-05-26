@@ -12,13 +12,13 @@ public class Compra {
 	private List<Fornecedor> fornecedores = new LinkedList<Fornecedor>();
 	private int codigocompra;
 	
-	public Compra(Float valortotal, LocalDate datacompra, List<Produto> produtos, List<Fornecedor> fornecedores, int codigocompra)
+	public Compra(Float valortotal, LocalDate datacompra,  int codigocompra)
 	{
 		this.valortotal = valortotal;
 		this.datacompra = datacompra;
-		this.produtos = produtos;
-		this.fornecedores = fornecedores;
 		this.codigocompra = codigocompra;
+		
+		
 	}
 
 	//Valor Total

@@ -34,11 +34,24 @@ public class Teste5 {
 		//verificando quantos cadastros de clientes existem
 		assertEquals(sist.getClientes().size(), 3);
 		
-		//verificando se o cliente buscado é o mesmo abaixo
-		assertEquals(sist.getClientes().nomecliente("Danielle").size(), 2);
-		assertEquals(((Cliente) sist.getClientes()).getNomecliente("Danielle"));
+		//-------------------------------------------------------------------------------------------
 		
-			
+		Compra co1 = new Compra(200.00f, LocalDate.of(2017,Month.DECEMBER, 10), 001);
+		Compra co2 = new Compra(300.00f, LocalDate.of(2017,Month.DECEMBER, 10), 002);
+		
+		sist.addCompra(co1);
+		sist.addCompra(co2);
+		
+		Compra compraBuscada = sist.searchCompra(001);
+		//Compra compraBuscada = sist.searchCompra(002);
+		
+		assertEquals(sist.getCompras().size(),2);
+		
+		
+		
+		
+		
+		
 				
 	}
 
