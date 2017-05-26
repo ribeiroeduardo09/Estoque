@@ -13,7 +13,7 @@ public class Fornecedor {
 	private LocalDate datacadastroforn;
 	private List<Produto> produtos = new LinkedList<Produto>();
 	
-	public Fornecedor(String nomeFornecedor, int cnpj, String email, String telefone, String endereco, 
+	public Fornecedor(String nomeFornecedor, long cnpj, String email, String telefone, String endereco, 
 					  LocalDate datacadastroforn)
 	{
 		this.nomeFornecedor = nomeFornecedor;

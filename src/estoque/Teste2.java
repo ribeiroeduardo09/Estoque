@@ -27,11 +27,18 @@ public class Teste2 {
 		assertEquals(produtoBuscado.getNome(), "Teclado");
 		
 		/*-----------Fornecedor---------------*/
-		Fornecedor f1 = new Fornecedor("Empresas Dunkan", 67214778000174, "contato@dunkan.com", "11 3031-1417", "Av. Brasil, 4570, São Paulo - SP", LocalDate.of(2017, Month.MAY, 22));
+		
+		Fornecedor f1 = new Fornecedor("JK Empreendmentos", 22305372000169L, "contato@jkempreendimentos.com.br", "12 3933-8399", "Rua da Alegria, 447", LocalDate.of(2017, Month.MAY, 12));
+		Fornecedor f2 = new Fornecedor("Indústrias Creative Commons", 07712313000111L, "creative@contact.com.br", "13 3447-7577", "Avenida Trindade, 666", LocalDate.of(2017, Month.MAY, 6));
 		
 		sist.addFornecedor(f1);
+		sist.addFornecedor(f2);
 		
+		assertEquals(sist.getFornecedores().size(), 2);
 		
+		Fornecedor buscaforn = sist.searchFornecedor(07712313000111L);
+		
+		assertEquals(buscaforn.getNome(), "")
 		
 	}
 
