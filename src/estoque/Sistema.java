@@ -60,12 +60,12 @@ public class Sistema {
 	public void addFornecedor(Fornecedor fornecedor){
 		fornecedores.add(fornecedor);
 	}
-	public void delFornecedor(int cnpj){
+	public void delFornecedor(long cnpj){
 		for(Fornecedor fncdr:fornecedores){
 			if(fncdr.getCnpj()==cnpj) fornecedores.remove(fncdr);
 		}
 	}
-	public Fornecedor searchFornecedor(int cnpj){
+	public Fornecedor searchFornecedor(long cnpj){
 		for(Fornecedor fncdr:fornecedores){
 			if(fncdr.getCnpj()==cnpj) return fncdr;
 		}

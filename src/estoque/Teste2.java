@@ -38,7 +38,7 @@ public class Teste2 {
 		
 		Fornecedor buscaforn = sist.searchFornecedor(07712313000111L);
 		
-		assertEquals(buscaforn.getNome(), "")
+		assertEquals(buscaforn.getNome(), "Indústrias Creative Commons");
 		
 	}
 
