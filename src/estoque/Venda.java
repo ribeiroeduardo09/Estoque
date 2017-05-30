@@ -11,12 +11,11 @@ public class Venda {
 	private int codigo;
 	private List<Produto> produtos = new LinkedList<Produto>();
 	
-	public Venda(Float valortotal, String formapagto, LocalDate datavenda, int codigo, List<Produto> produtos){
+	public Venda(Float valortotal, String formapagto, LocalDate datavenda, int codigo){
 		this.valortotal = valortotal;
 		this.formapagto = formapagto;
 		this.datavenda = datavenda;
 		this.codigo = codigo;
-		this.produtos = produtos;
 	}
 
 	//Valor Total
