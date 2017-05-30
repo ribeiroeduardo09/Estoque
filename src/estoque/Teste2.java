@@ -40,6 +40,8 @@ public class Teste2 {
 		
 		assertEquals(buscaforn.getNome(), "Indústrias Creative Commons");
 		
+		
+		
 	}
 
 }
