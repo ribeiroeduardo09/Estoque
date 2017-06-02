@@ -3,7 +3,7 @@ package estoque;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class Teste {
+public class teste {
 	
 	public static void main(String[] args) {
 		
