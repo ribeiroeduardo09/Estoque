@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.LinkedList;
 
 import org.junit.Test;
 
@@ -34,6 +35,8 @@ public class Teste5 {
 		//verificando quantos cadastros de clientes existem
 		assertEquals(sist.getClientes().size(), 3);
 		
+		assertEquals(clienteBuscado.getNomecliente(), "Danielle");
+				
 		//-------------------------------------------------------------------------------------------
 		
 		Compra co1 = new Compra(200.00f, LocalDate.of(2017,Month.DECEMBER, 10), 001);
@@ -47,6 +50,7 @@ public class Teste5 {
 		
 		assertEquals(sist.getCompras().size(),2);
 		
+		assertEquals(compraBuscada.getDatacompra(), LocalDate.of(2017,Month.DECEMBER, 10));	
 		
 		
 		
