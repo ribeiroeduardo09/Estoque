@@ -13,6 +13,8 @@ public class Teste3 {
 	public void test() {
 		Sistema sist = new Sistema();
 		
+		/*-----------Produto---------------*/
+		
 		Produto p1 = new Produto("Teclado", 15.50f, 20.50f, 111111, "Teclado comum", 3, LocalDate.of(2017, Month.FEBRUARY, 10));
 		Produto p2 = new Produto("Monitor 15 Pol.", 234.90f, 310.50f, 222222, "Monitor LG 15 Polegadas", 5, LocalDate.of(2017, Month.FEBRUARY, 28));
 		
@@ -26,20 +28,34 @@ public class Teste3 {
 		
 		assertEquals(produtoBuscado.getNome(), "Teclado");
 		
-		/*-----------Fornecedor---------------*/
+		/*-----------Usuario---------------*/
 		
-		Fornecedor f1 = new Fornecedor("JK Empreendmentos", 22305372000169L, "contato@jkempreendimentos.com.br", "12 3933-8399", "Rua da Alegria, 447", LocalDate.of(2017, Month.MAY, 12));
-		Fornecedor f2 = new Fornecedor("Indústrias Creative Commons", 07712313000111L, "creative@contact.com.br", "13 3447-7577", "Avenida Trindade, 666", LocalDate.of(2017, Month.MAY, 6));
+		Usuario u1 = new Usuario("Tiago", "tiagottt", "123", 123, "Secretario", LocalDate.of(2017, Month.MAY, 12));
+		Usuario u2 = new Usuario("Felipe", "felipettt", "456", 127, "Gerente", LocalDate.of(2017, Month.MAY, 6));
 		
-		sist.addFornecedor(f1);
-		sist.addFornecedor(f2);
+		System.out.println(sist.usuarios);
 		
-		assertEquals(sist.getFornecedores().size(), 2);
+		sist.deletarUsuario("Tiago");
 		
-		Fornecedor buscaforn = sist.searchFornecedor(07712313000111L);
+		System.out.println(sist.usuarios);
 		
-		assertEquals(buscaforn.getNome(), "Indústrias Creative Commons");
+		sist.addUsuario(new Usuario("Junior", "juniorttt", "234", 345, "Gerente", LocalDate.of(2017, Month.MAY, 6));
 		
+		System.out.println(sist.usuarios);
+		
+		/*-----------Venda---------------*/
+		
+		Venda v1 = new Venda(3.50f, "Dinheiro", LocalDate.of(2017, Month.APRIL, 10), 001);
+		Venda v2 = new Venda(7.50f, "Cartao", LocalDate.of(2017, Month.MAY, 15), 002);
+		
+		sist.addVenda(v1);
+		sist.addVenda(v2);
+		
+		assertEquals(sist.getVendas().size(), 2);
+		
+		Venda vendaBuscada = sist.searchVenda(002);
+		
+		assertEquals(vendaBuscada.getFormapagto(), "Cartao");
 	}
 
 }

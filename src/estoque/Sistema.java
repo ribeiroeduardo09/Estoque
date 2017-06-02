@@ -5,12 +5,47 @@ import java.util.List;
 
 public class Sistema {
 	
+	public List<Administrador> admin = new LinkedList<Administrador>();
 	private List<Produto> produtos = new LinkedList<Produto>();
 	private List<Cliente> clientes = new LinkedList<Cliente>();
 	private List<Fornecedor> fornecedores = new LinkedList<Fornecedor>();
-	private List<Usuario> usuarios = new LinkedList<Usuario>();
+	public List<Usuario> usuarios = new LinkedList<Usuario>();
 	private List<Venda> vendas = new LinkedList<Venda>();
 	private List<Compra> compras = new LinkedList<Compra>();
+	
+	/*---------Administrador----------*/
+	public void addAdmin(Administrador adm)
+	{
+		if(verificarAdminExistente(adm)==false){
+			admin.add(adm);
+		}
+	}
+		
+	public boolean verificarAdminExistente(Administrador adm){
+		for(Administrador temp:admin){
+			if(temp.getDados().getUsuario().equals(adm.getDados().getUsuario())) return true;
+		}
+		return false;
+	}
+	
+	public List<Administrador> logarAdmin(DadosLogin login)
+	{
+		List<Administrador> encontrado = new LinkedList<Administrador>();
+		for(Administrador buscarAdministrador:admin)
+		{
+			if(buscarAdministrador.getDados().matches(login)==true)
+			{
+				encontrado.add(buscarAdministrador);
+			}
+		}
+		return encontrado;
+	}
+	
+	public void deletarAdministrador(String login){
+		for(Administrador temp:admin){
+			if(temp.getDados().getUsuario().equals(login)) admin.remove(temp);
+		}
+	}
 	
 	/*---------Produtos----------*/
 	public void addProduto(Produto prod){
@@ -26,21 +61,42 @@ public class Sistema {
 			if(prod.getCodigoproduto() == codigoproduto) return prod;
 		} 
 		return null;
-	}/*---------Usuários----------*/
-	public void addUsuario(Usuario usuario){
-		usuarios.add(usuario);
 	}
-	public void delUsuario(String login){
-		for(Usuario usr:usuarios){
-			if(usr.getLogin()==login) usuarios.remove(usr);
+	
+	/*---------Usuários----------*/
+	public void addUsuario(Usuario usuario)
+	{
+		if(verificarUsuarioExistente(usuario)==false){
+			usuarios.add(usuario);
 		}
 	}
-	public Usuario searchUsuario(String login){
-		for(Usuario usr:usuarios){
-			if(usr.getLogin()==login) return usr;
+		
+	public boolean verificarUsuarioExistente(Usuario usu){
+		for(Usuario user:usuarios){
+			if(user.getDados().getUsuario().equals(usu.getDados().getUsuario())) return true;
 		}
-		return null;
+		return false;
 	}
+	
+	public List<Usuario> logarUser(DadosLogin login)
+	{
+		List<Usuario> encontrado = new LinkedList<Usuario>();
+		for(Usuario buscarUsuario:usuarios)
+		{
+			if(buscarUsuario.getDados().matches(login)==true)
+			{
+				encontrado.add(buscarUsuario);
+			}
+		}
+		return encontrado;
+	}
+	
+	public void deletarUsuario(String login){
+		for(Usuario user:usuarios){
+			if(user.getDados().getUsuario().equals(login)) usuarios.remove(user);
+		}
+	}
+	
 	/*---------Clientes----------*/
 	public void addCliente(Cliente cliente){
 		clientes.add(cliente);

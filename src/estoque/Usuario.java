@@ -5,16 +5,14 @@ import java.time.LocalDate;
 public class Usuario {
 	
 	private String nomeusuario;
-	private String login;
-	private String senha;
+	private DadosLogin dados;
 	private int matricula;
 	private String cargo;
 	private LocalDate datacadastro;
 	
-	public Usuario(String nomeusuario, String login, String senha, int matricula, String cargo, LocalDate datacadastro){
+	public Usuario(String nomeusuario, DadosLogin dados, int matricula, String cargo, LocalDate datacadastro){
 		this.nomeusuario = nomeusuario;
-		this.login = login;
-		this.senha = senha;
+		this.dados = dados;
 		this.matricula = matricula;
 		this.cargo = cargo;
 		this.datacadastro = datacadastro;
@@ -28,20 +26,9 @@ public class Usuario {
 		this.nomeusuario = nomeusuario;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public DadosLogin getDados()
+	{
+		return dados;
 	}
 
 	public int getMatricula() {

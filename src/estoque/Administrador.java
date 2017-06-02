@@ -1,31 +1,38 @@
 package estoque;
 
 public class Administrador {
+	private String nome;
+	private String sobrenome;
+	private DadosLogin dados;
 	
-	private String login;
-	private String senha;
-	
-	public Administrador(String login, String senha)
+	public Administrador(String nome,String sobrenome,DadosLogin dados)
 	{
-		this.login = login;
-		this.senha = senha;
-	}
-	
-	public String getLogin()
-	{
-		return login;
-	}
-	public void setLogin(String novoLogin)
-	{
-		this.login = novoLogin;
+		this.nome=nome;
+		this.sobrenome=sobrenome;
+		this.dados = dados;
 	}
 	
-	public String getSenha()
+	public String getNome()
 	{
-		return senha;
+		return nome;
 	}
-	public void setSenha(String novaSenha)
+	public void setNome(String n)
 	{
-		this.senha = novaSenha;
+		nome=n;
 	}
+	
+	public String getSobrenome()
+	{
+		return sobrenome;
+	}
+	public void setSobrenome(String s)
+	{
+		sobrenome=s;
+	}
+	
+	public DadosLogin getDados()
+	{
+		return dados;
+	}
+	
 }
