@@ -15,18 +15,14 @@ public class Teste6 {
 		
 		/*-----------Historico---------------*/
 		
-		Historico h1 = new Historico("Teclado", 15.50f, 20.50f, 111111, "Teclado comum", 3, LocalDate.of(2017, Month.FEBRUARY, 10));
-		Historico h2 = new Historico("Monitor 15 Pol.", 234.90f, 310.50f, 222222, "Monitor LG 15 Polegadas", 5, LocalDate.of(2017, Month.FEBRUARY, 28));
-		
-		
-		sist.addHistorico(h1);
-		sist.addHistorico(h2);
+		sist.addHistorico(new Historico(001, LocalDate.of(2017, Month.FEBRUARY, 10)));
+		sist.addHistorico(new Historico(002, LocalDate.of(2017, Month.FEBRUARY, 28)));
 		
 		assertEquals(sist.getHistorico().size(), 2);
 		
-		Produto produtoBuscado = sist.searchHistorico(111111);
+		Historico historicoBuscado = sist.searchHistorico(002);
 		
-		assertEquals(produtoBuscado.getNome(), "Teclado");
+		assertEquals(historicoBuscado.getDataAcao(), LocalDate.of(2017, Month.FEBRUARY, 28));
 		
 		/*-----------Administrador---------------*/
 		

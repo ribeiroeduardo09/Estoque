@@ -12,6 +12,7 @@ public class Sistema {
 	public List<Usuario> usuarios = new LinkedList<Usuario>();
 	private List<Venda> vendas = new LinkedList<Venda>();
 	private List<Compra> compras = new LinkedList<Compra>();
+	private List<Historico> historicos = new LinkedList<Historico>();
 	
 	/*---------Administrador----------*/
 	public void addAdmin(Administrador adm)
@@ -142,6 +143,7 @@ public class Sistema {
 		}
 		return null;
 	}
+	
 	/*---------Venda----------*/
 	public void addVenda(Venda venda){
 		vendas.add(venda);
@@ -154,6 +156,22 @@ public class Sistema {
 	public Venda searchVenda(int codigo){
 		for(Venda ven:vendas){
 			if(ven.getCodigo()==codigo) return ven;
+		}
+		return null;
+	}
+	
+	/*---------Historico----------*/
+	public void addHistorico(Historico historico){
+		historicos.add(historico);
+	}
+	public void delHistorico(int codigohistorico){
+		for(Historico temp:historicos){
+			if(temp.getCodigohistorico() == codigohistorico) historicos.remove(temp);
+		}
+	}
+	public Historico searchHistorico(int codigohistorico){
+		for(Historico temp:historicos){
+			if(temp.getCodigohistorico() == codigohistorico) return temp;
 		}
 		return null;
 	}
@@ -188,6 +206,12 @@ public class Sistema {
 	}
 	public void setVendas(List<Venda> vendas) {
 		this.vendas = vendas;
+	}
+	public List<Historico> getHistorico() {
+		return historicos;
+	}
+	public void setHistorico(List<Historico> historicos) {
+		this.historicos = historicos;
 	}
 	public List<Compra> getCompras() {
 		return compras;

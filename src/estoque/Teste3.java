@@ -30,8 +30,8 @@ public class Teste3 {
 		
 		/*-----------Usuario---------------*/
 		
-		Usuario u1 = new Usuario("Tiago", "tiagottt", "123", 123, "Secretario", LocalDate.of(2017, Month.MAY, 12));
-		Usuario u2 = new Usuario("Felipe", "felipettt", "456", 127, "Gerente", LocalDate.of(2017, Month.MAY, 6));
+		sist.addUsuario(new Usuario("Tiago", new DadosLogin("tiagottt", "123"), 123, "Secretario", LocalDate.of(2017, Month.MAY, 12)));
+		sist.addUsuario(new Usuario("Felipe", new DadosLogin("felipettt", "456"), 127, "Gerente", LocalDate.of(2017, Month.MAY, 6)));
 		
 		System.out.println(sist.usuarios);
 		
@@ -39,7 +39,7 @@ public class Teste3 {
 		
 		System.out.println(sist.usuarios);
 		
-		sist.addUsuario(new Usuario("Junior", "juniorttt", "234", 345, "Gerente", LocalDate.of(2017, Month.MAY, 6));
+		sist.addUsuario(new Usuario("Junior", new DadosLogin("juniorttt", "234"), 345, "Gerente", LocalDate.of(2017, Month.MAY, 6)));
 		
 		System.out.println(sist.usuarios);
 		

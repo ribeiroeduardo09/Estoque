@@ -12,13 +12,17 @@ public class Historico {
 	private List<Compra> compras = new LinkedList<Compra>();
 	private List<Fornecedor> fornecedores = new LinkedList<Fornecedor>();
 	private List<Cliente> clientes = new LinkedList<Cliente>();
-	
+	private int codigohistorico;
 	private LocalDate dataAcao;
 
+	public Historico(int codigohistorico, LocalDate dataAcao){
+		this.codigohistorico = codigohistorico; 
+		this.dataAcao = dataAcao;
+	}
+	
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
-
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
@@ -26,7 +30,6 @@ public class Historico {
 	public List<Usuario> getUsuario() {
 		return usuarios;
 	}
-
 	public void setUsuario(List<Usuario> usuario) {
 		this.usuarios = usuario;
 	}
@@ -34,7 +37,6 @@ public class Historico {
 	public List<Venda> getVenda() {
 		return vendas;
 	}
-
 	public void setVenda(List<Venda> venda) {
 		this.vendas = venda;
 	}
@@ -42,7 +44,6 @@ public class Historico {
 	public List<Compra> getCompra() {
 		return compras;
 	}
-
 	public void setCompra(List<Compra> compra) {
 		this.compras = compra;
 	}
@@ -50,7 +51,6 @@ public class Historico {
 	public List<Fornecedor> getFornecedor() {
 		return fornecedores;
 	}
-
 	public void setFornecedor(List<Fornecedor> fornecedor) {
 		this.fornecedores = fornecedor;
 	}
@@ -58,15 +58,20 @@ public class Historico {
 	public List<Cliente> getCliente() {
 		return clientes;
 	}
-
 	public void setCliente(List<Cliente> cliente) {
 		this.clientes = cliente;
 	}
 
+	public int getCodigohistorico() {
+		return codigohistorico;
+	}
+	public void setCodigohistorico(int codigohistorico) {
+		this.codigohistorico = codigohistorico;
+	}
+	
 	public LocalDate getDataAcao() {
 		return dataAcao;
 	}
-
 	public void setDataAcao(LocalDate dataAcao) {
 		this.dataAcao = dataAcao;
 	}
