@@ -95,8 +95,8 @@ public class Fornecedor {
 	{
 		return produtos;
 	}
-	public void setProdutos(List<Produto> novosProdutos)
+	public void setProdutos(List<Produto> produtos)
 	{
-		this.produtos = novosProdutos;
+		this.produtos = produtos;
 	}
 }
